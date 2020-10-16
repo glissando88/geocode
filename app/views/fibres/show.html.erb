@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serviceid:</strong>
+  <%= @fibre.serviceid %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @fibre.address %>
+</p>
+
+<%= link_to 'Edit', edit_fibre_path(@fibre) %> |
+<%= link_to 'Back', fibres_path %>

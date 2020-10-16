@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fibres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Serviceid</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fibres.each do |fibre| %>
+      <tr>
+        <td><%= fibre.serviceid %></td>
+        <td><%= fibre.address %></td>
+        <td><%= link_to 'Show', fibre %></td>
+        <td><%= link_to 'Edit', edit_fibre_path(fibre) %></td>
+        <td><%= link_to 'Destroy', fibre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fibre', new_fibre_path %>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
